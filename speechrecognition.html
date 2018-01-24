@@ -8,6 +8,7 @@
                 recognition.continuous = true;
                 recognition.interimResults = true;
                 recognition.onresult = function(event) { 
+                    console.log(event);
                     document.getElementById("tbResult").innerText = JSON.stringify(event);
                 }
                 recognition.start();
