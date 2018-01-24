@@ -5,6 +5,8 @@
         <script>
             function startRecognition(){
                 var recognition = new webkitSpeechRecognition();
+                recognition.continuous = true;
+                recognition.interimResults = true;
                 recognition.onresult = function(event) { 
                     document.getElementById("tbResult").innerText = JSON.stringify(event);
                 }
