@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <script>
+            function startRecognition(){
+                var recognition = new webkitSpeechRecognition();
+                recognition.onresult = function(event) { 
+                    document.getElementById("tbResult").innerText = JSON.stringify(event);
+                }
+                recognition.start();
+            }
+        </script>
+    </head>
+    <body>
+        <button type="button" onclick="startRecognition()">Begin!</button>
+
+        <textarea id="tbResult"></textarea>
+    </body>
+</html>
