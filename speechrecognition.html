@@ -4,6 +4,8 @@
     <head>
         <script>
             function startRecognition(){
+                document.getElementById("tbResult").value = "Starting recognition...";
+                
                 var recognition = new webkitSpeechRecognition();
                 recognition.continuous = true;
                 recognition.interimResults = true;
@@ -17,7 +19,7 @@
                         }
                     }
 
-                    document.getElementById("tbResult").innerText = results.join("\r\n");
+                    document.getElementById("tbResult").value = results.join(" ");
                 }
                 recognition.start();
             }
@@ -29,7 +31,7 @@
         </p>
 
         <p>
-            <textarea id="tbResult" rows="10"></textarea>
+            <input type="text" id="tbResult"></textarea>
         </p>
     </body>
 </html>
